@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Restaurant-Reservation-System/static/css/main.92aed056.css",
-    "main.js": "/Restaurant-Reservation-System/static/js/main.95c8d4a3.js",
+    "main.js": "/Restaurant-Reservation-System/static/js/main.81d0461d.js",
     "static/media/reserved.jpg": "/Restaurant-Reservation-System/static/media/reserved.6dd7e717ef3138810eaa.jpg",
     "static/media/bg.jpg": "/Restaurant-Reservation-System/static/media/bg.dc079cd787ef11b2cc52.jpg",
     "static/media/footer.jpg": "/Restaurant-Reservation-System/static/media/footer.2d2872eecf861d33a43b.jpg",
@@ -22,10 +22,10 @@
     "static/media/fork.png": "/Restaurant-Reservation-System/static/media/fork.f639a91a8add77479264.png",
     "index.html": "/Restaurant-Reservation-System/index.html",
     "main.92aed056.css.map": "/Restaurant-Reservation-System/static/css/main.92aed056.css.map",
-    "main.95c8d4a3.js.map": "/Restaurant-Reservation-System/static/js/main.95c8d4a3.js.map"
+    "main.81d0461d.js.map": "/Restaurant-Reservation-System/static/js/main.81d0461d.js.map"
   },
   "entrypoints": [
     "static/css/main.92aed056.css",
-    "static/js/main.95c8d4a3.js"
+    "static/js/main.81d0461d.js"
   ]
 }
