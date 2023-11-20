@@ -9,7 +9,7 @@ function SharedLayout() {
 
   function logout() {
     localStorage.removeItem("currentUser");
-    window.location.href = "/login";
+    window.location.href = "/Restaurant-Reservation-System/login";
   }
 
   return (
@@ -21,9 +21,9 @@ function SharedLayout() {
         </div>
         <div className="nav-links">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="book">Booking</NavLink>
-          <NavLink to="contact">Contact</NavLink>
+          <NavLink to="Restaurant-Reservation-System/about">About</NavLink>
+          <NavLink to="Restaurant-Reservation-System/book">Booking</NavLink>
+          <NavLink to="Restaurant-Reservation-System/contact">Contact</NavLink>
           {user ? (
             <>
               <div className="dropdown mr-4">
@@ -42,11 +42,11 @@ function SharedLayout() {
                   className="dropdown-menu"
                   aria-labelledby="dropdownMenuButton"
                 >
-                  <Link to="profile" className="dropdown-item user-drop">
+                  <Link to="Restaurant-Reservation-System/profile" className="dropdown-item user-drop">
                     Profile
                   </Link>
                   {user.isAdmin && (
-                    <Link to="admin" className="dropdown-item user-drop">
+                    <Link to="Restaurant-Reservation-System/admin" className="dropdown-item user-drop">
                       Admin panel
                     </Link>
                   )}
@@ -57,7 +57,7 @@ function SharedLayout() {
               </div>
             </>
           ) : (
-            <NavLink to="login">Login</NavLink>
+            <NavLink to="Restaurant-Reservation-System/login">Login</NavLink>
           )}
         </div>
       </nav>

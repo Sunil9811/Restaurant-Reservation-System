@@ -19,7 +19,7 @@ function Booking() {
     async function fetchData() {
 
       if(!localStorage.getItem("currentUser")){
-          window.location='/login'
+          window.location='/Restaurant-Reservation-System/login'
       }
 
       try {

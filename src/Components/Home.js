@@ -16,7 +16,7 @@ function Home() {
         <div className="home-content">
           <h2>Delightfull Experience</h2>
           <h1>Welcome to 'Retro Restaurants'</h1>
-          <Link to="book" className="home-button">
+          <Link to="/book" className="home-button">
             Reservation
           </Link>
         </div>
