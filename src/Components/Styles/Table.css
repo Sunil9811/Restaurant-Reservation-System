@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Playfair:opsz@5..1200&display=swap');
+
+.main-container{
+    font-family: 'Playfair Display', serif;
+    width: inherit;
+    min-height: 120vh;
+    max-height: auto;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card-container .card{
+    width: 800px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 1rem;
+    background: #fdf7ee;
+    box-shadow: 0 8px 32px 0 rgba(13, 14, 22, 0.3);
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card-container .card .preview{
+    width: 350px;
+    height: auto;
+}
+
+.card-container .card .card-content{
+    width: 400px;
+    height: auto;
+}
+
+.card-container .card .card-content .members{
+    display: flex;
+}
+
+.card-container .card .card-content .members input{
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    width: 45px;
+    padding-left: 8px;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.card-container .card .card-content h1{
+    font-size: 1.7rem;
+    padding: 0 0.5rem;
+    text-align: left;
+    font-weight: 900;
+}
+
+.card-container .card .card-content p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+    margin: 0 !important;
+}
+
+.card-container .card .card-content span{
+    color: black;
+    font-weight: bolder;
+}
+.card .card-content .button .btn{
+    float: right;
+    cursor: pointer;
+    outline: none;
+    margin-left: 1rem;
+    background: transparent;
+    border: 1px solid #eb5058;
+    color: #eb5058;
+    border-radius: 0 !important;
+}
+
+.card .card-content .button .btn:hover{
+    background: #eb5058;
+    color: white;
+}
+
+
+.selection{
+    width: 70%;
+    margin: 1rem;
+    display: flex;
+    gap: 3rem;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #fae6c9;
+    border-radius: 10px;
+}
+
+.selection select{
+    width: 200px;
+    padding: 0.3rem;
+}
+
+.selection input{
+    width: 500px;
+    padding: 0.5rem 1rem;
+}
+
+
+
