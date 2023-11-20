@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import  Loader from "./Spinner/Loader";
 import Error from "./Spinner/Error";
 import Success from "./Spinner/Success";
+import { baseUrl } from "../api/baseUrl";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -25,7 +26,7 @@ function Signup() {
       }
       try {
         setLoading(true)
-        const result = (await axios.post("/api/users/signup",user)).data
+        const result = (await axios.post(`${baseUrl}/api/users/signup`,user)).data
         setLoading(false)
         setSuccess(true)
         console.log(result)

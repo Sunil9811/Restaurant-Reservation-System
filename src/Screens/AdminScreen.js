@@ -6,6 +6,7 @@ import axios from "axios";
 import Loader from "../Components/Spinner/Loader";
 import Error from "../Components/Spinner/Error";
 import Swal from "sweetalert2";
+import { baseUrl } from "../api/baseUrl";
 
 function AdminScreen() {
   useEffect(() => {
@@ -79,7 +80,7 @@ export function Bookings() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = (await axios.get("/api/booking/getallbookings")).data;
+        const data = (await axios.get(`${baseUrl}/api/booking/getallbookings`)).data;
         setBookings(data);
         setLoading(false);
       } catch (error) {
@@ -135,7 +136,7 @@ export function Tables() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = (await axios.get("/api/tables/getalltables")).data;
+        const data = (await axios.get(`${baseUrl}/api/tables/getalltables`)).data;
         setTables(data);
         setLoading(false);
       } catch (error) {
@@ -192,7 +193,7 @@ export function Users() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = (await axios.get("/api/users/getallusers")).data;
+        const data = (await axios.get(`${baseUrl}/api/users/getallusers`)).data;
         setUsers(data);
         setLoading(false);
       } catch (error) {
@@ -263,7 +264,7 @@ export function AddTable() {
 
     try {
       setLoading(true);
-      const result = (await axios.post("/api/tables/addtable", newTable)).data;
+      const result = (await axios.post(`${baseUrl}/api/tables/addtable`, newTable)).data;
       console.log(result);
       setLoading(false);
       Swal.fire(

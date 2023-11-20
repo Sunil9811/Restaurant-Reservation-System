@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from 'sweetalert2';
 import Loader from "../Components/Spinner/Loader";
 import "./styles/BookingScreen.css";
+import { baseUrl } from "../api/baseUrl";
 
 function BookingScreen() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -21,7 +22,7 @@ function BookingScreen() {
       try {
         setLoading(true);
         const data = (
-          await axios.post("/api/tables/gettablebyid", { tableid: id })
+          await axios.post(`${baseUrl}/api/tables/gettablebyid`, { tableid: id })
         ).data;
         setTable(data);
         setLoading(false);
@@ -45,7 +46,7 @@ function BookingScreen() {
 
     try {
       setLoading(true)
-      const result = await axios.post('/api/booking/booktable', bookingDetails)
+      const result = await axios.post(`${baseUrl}/api/booking/booktable`, bookingDetails)
       setLoading(false)
       Swal.fire("Congratulations", "Your table has been booked", "success")
       console.log(result)

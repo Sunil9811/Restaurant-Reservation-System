@@ -5,6 +5,7 @@ import "./styles/ProfileScreen.css";
 import axios from "axios";
 import Loader from "../Components/Spinner/Loader";
 import Swal from "sweetalert2";
+import { baseUrl } from "../api/baseUrl";
 
 export default function ProfileScreen() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -58,7 +59,7 @@ export function MyBookings() {
       try {
         setLoading(true);
         const data = (
-          await axios.post("/api/booking/getbookingsbyuserid", {
+          await axios.post(`${baseUrl}/api/booking/getbookingsbyuserid`, {
             userid: user._id,
           })
         ).data;
@@ -77,7 +78,7 @@ export function MyBookings() {
   async function cancelBooking(bookingid, tableid) {
     try {
       setLoading(true);
-      const result = await axios.post("/api/booking/cancelbooking", {
+      const result = await axios.post(`${baseUrl}/api/booking/cancelbooking`, {
         bookingid,
         tableid,
       });

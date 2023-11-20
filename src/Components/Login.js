@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Loader from './Spinner/Loader';
 import Error from './Spinner/Error';
+import { baseUrl } from '../api/baseUrl';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ function Login() {
     }
     try {
       setLoading(true)
-      const result = (await axios.post("/api/users/login",user)).data
+      const result = (await axios.post(`${baseUrl}/api/users/login`,user)).data
       setLoading(false)
       localStorage.setItem('currentUser', JSON.stringify(result))
       window.location.href= '/book'

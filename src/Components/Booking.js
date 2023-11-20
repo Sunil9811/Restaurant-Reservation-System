@@ -5,6 +5,7 @@ import { DatePicker } from "antd";
 import Table from "./Table";
 import "./Styles/Table.css";
 import Loader from "./Spinner/Loader";
+import { baseUrl } from "../api/baseUrl";
 
 function Booking() {
   const [tables, setTables] = useState([]);
@@ -23,7 +24,7 @@ function Booking() {
 
       try {
         setLoading(true);
-        const data = (await axios.get("/api/tables/getalltables")).data;
+        const data = (await axios.get(`${baseUrl}/api/tables/getalltables`)).data;
         setTables(data);
         setDuplicateTables(data)
         setLoading(false);
