@@ -6,6 +6,7 @@ import Table from "./Table";
 import "./Styles/Table.css";
 import Loader from "./Spinner/Loader";
 import { baseUrl } from "../api/baseUrl";
+import { useNavigate } from "react-router-dom";
 
 function Booking() {
   const [tables, setTables] = useState([]);
@@ -15,11 +16,15 @@ function Booking() {
   const [serachKey,setSearchKey] = useState('')
   const [type,setType] = useState("all")
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     async function fetchData() {
 
       if(!localStorage.getItem("currentUser")){
-          window.location='/Restaurant-Reservation-System/login'
+          // window.location='/Restaurant-Reservation-System/login'
+          navigate('/login')
+
       }
 
       try {

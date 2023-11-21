@@ -1,15 +1,17 @@
 import React from "react";
 import "./styles/SharedLayout.css";
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import { NavLink, Link } from "react-router-dom";
 import Footer from "./Footer";
 
 function SharedLayout() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
 
   function logout() {
     localStorage.removeItem("currentUser");
-    window.location.href = "/Restaurant-Reservation-System/login";
+    // window.location.href = "/Restaurant-Reservation-System/login";
+    navigate('/login')
   }
 
   return (

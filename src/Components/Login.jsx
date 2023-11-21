@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './Styles/Login.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Loader from './Spinner/Loader';
 import Error from './Spinner/Error';
@@ -11,6 +11,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   async function login(){
     const user = {
@@ -22,7 +23,8 @@ function Login() {
       const result = (await axios.post(`${baseUrl}/api/users/login`,user)).data
       setLoading(false)
       localStorage.setItem('currentUser', JSON.stringify(result))
-      window.location.href= '/Restaurant-Reservation-System/book'
+      // window.location.href= '/Restaurant-Reservation-System/book'
+      navigate('/book')
 
       console.log(result)
     } catch (error) {

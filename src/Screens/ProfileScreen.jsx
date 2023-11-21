@@ -6,13 +6,16 @@ import axios from "axios";
 import Loader from "../Components/Spinner/Loader";
 import Swal from "sweetalert2";
 import { baseUrl } from "../api/baseUrl";
+import { useNavigate } from "react-router";
 
 export default function ProfileScreen() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
-      window.location.href = "/Restaurant-Reservation-System/login";
+      // window.location.href = "/Restaurant-Reservation-System/login";
+      navigate('/login')
     }
   }, []);
 

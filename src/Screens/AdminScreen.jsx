@@ -7,11 +7,14 @@ import Loader from "../Components/Spinner/Loader";
 import Error from "../Components/Spinner/Error";
 import Swal from "sweetalert2";
 import { baseUrl } from "../api/baseUrl";
+import { useNavigate } from "react-router";
 
 function AdminScreen() {
+  const navigate = useNavigate();
   useEffect(() => {
     if (!JSON.parse(localStorage.getItem("currentUser")).isAdmin) {
-      window.location.href = "/";
+      // window.location.href = "/";
+      navigate('/')
     }
   });
 
