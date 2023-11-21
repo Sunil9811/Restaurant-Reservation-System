@@ -19,18 +19,18 @@ import AdminScreen from './Screens/AdminScreen';
 function App() {
   return (
     <>
-      <BrowserRouter basename='/Restaurant-Reservation-System'>
+      <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<SharedLayout />} />
           <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='book' element={<Booking />} />
-          <Route path="/book/:id/:date/:members" element={<BookingScreen />} />
-          <Route path='contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/book' element={<Booking />} />
+          <Route path='/book/:id/:date/:members' element={<BookingScreen />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
-          <Route path='signup' element={<Signup />} />
-          <Route path='profile' element={<ProfileScreen />} />
-          <Route path='admin' element={<AdminScreen />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/profile' element={<ProfileScreen />} />
+          <Route path='/admin' element={<AdminScreen />} />
         </Routes>
       </BrowserRouter>
     </>
