@@ -54,7 +54,7 @@ function Table({ table, date }) {
             View Details
           </button>
           {date && (
-            <Link to={`/Restaurant-Reservation-System/book/${table._id}/${date}/${members}`}>
+            <Link to={`/book/${table._id}/${date}/${members}`}>
               <Button className="btn">Book now</Button>
             </Link>
           )}

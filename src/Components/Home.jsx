@@ -8,10 +8,13 @@ import fork from "./images/fork.png";
 import spl from "./images/spl.png";
 import pizza from "./images/pizza.png";
 import reserve from "./images/reserve.png";
+import SharedLayout from "../Screens/SharedLayout";
+import Footer from "../Screens/Footer";
 
 function Home() {
   return (
     <>
+      <SharedLayout />
       <div className="home-container">
         <div className="home-content">
           <h2>Delightfull Experience</h2>
@@ -140,6 +143,7 @@ function Home() {
             <Link to='book'>Reservation</Link>
         </div>
       </div>
+      <Footer />
       
     </>
   );

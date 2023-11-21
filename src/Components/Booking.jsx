@@ -13,7 +13,7 @@ function Booking() {
   const [loading, setLoading] = useState();
   const [date,setDate] = useState();
   const [duplicateTables,setDuplicateTables] = useState([]);
-  const [serachKey,setSearchKey] = useState('')
+  const [searchKey,setSearchKey] = useState('')
   const [type,setType] = useState("all")
 
   const navigate = useNavigate();
@@ -69,7 +69,7 @@ function Booking() {
   };
 
   function filterBysearch(){
-    const tempTables = duplicateTables.filter(table => table.name.toLowerCase().includes(serachKey.toLowerCase()))
+    const tempTables = duplicateTables.filter(table => table.name.toLowerCase().includes(searchKey.toLowerCase()))
     setTables(tempTables)
   }
 
@@ -96,8 +96,8 @@ function Booking() {
           <>
             <div className="selection">
               <DatePicker format="DD-MM-YYYY" onChange={filterByDate} />
-              <input type="text" value={serachKey}
-              onChange={(e) => setSearchKey(e.target.value)} onKeyUp={filterBysearch} placeholder="serach type" />
+              <input type="text" value={searchKey}
+              onChange={(e) => setSearchKey(e.target.value)} onKeyUp={filterBysearch} placeholder="search type" />
               <select value={type} onChange={(e) => filterByType(e.target.value)}>
                 <option value="all">All</option>
                 <option value="single">Single</option>

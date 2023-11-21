@@ -23,9 +23,9 @@ function SharedLayout() {
         </div>
         <div className="nav-links">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="Restaurant-Reservation-System/about">About</NavLink>
-          <NavLink to="Restaurant-Reservation-System/book">Booking</NavLink>
-          <NavLink to="Restaurant-Reservation-System/contact">Contact</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/book">Booking</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
           {user ? (
             <>
               <div className="dropdown mr-4">
@@ -44,11 +44,11 @@ function SharedLayout() {
                   className="dropdown-menu"
                   aria-labelledby="dropdownMenuButton"
                 >
-                  <Link to="Restaurant-Reservation-System/profile" className="dropdown-item user-drop">
+                  <Link to="/profile" className="dropdown-item user-drop">
                     Profile
                   </Link>
                   {user.isAdmin && (
-                    <Link to="Restaurant-Reservation-System/admin" className="dropdown-item user-drop">
+                    <Link to="/admin" className="dropdown-item user-drop">
                       Admin panel
                     </Link>
                   )}
@@ -59,14 +59,14 @@ function SharedLayout() {
               </div>
             </>
           ) : (
-            <NavLink to="Restaurant-Reservation-System/login">Login</NavLink>
+            <NavLink to="/login">Login</NavLink>
           )}
         </div>
       </nav>
       <main className="outlet">
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

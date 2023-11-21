@@ -48,7 +48,7 @@ function Login() {
             <div className='ele'><i className="fa fa-envelope icon"></i><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Email Address' /></div>
             <div className='ele'><i className="fa fa-key icon"></i><input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='New Password' /></div>
             <button className='log-btn' onClick={login}>LogIn</button>
-            <Link to='/Restaurant-Reservation-System/signup'>Signup here</Link>
+            <Link to='/signup'>Signup here</Link>
             <p>or Login with</p>
             <div className='links'>
             <Link to='/'><i className="fa-brands fa-facebook"></i></Link>
