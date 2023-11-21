@@ -274,9 +274,10 @@ export function AddTable() {
         "Congarts",
         "Your new table has been added successfully",
         "success"
-      ).then((result) => {
-        window.location.reload();
-      });
+      )
+      // .then((result) => {
+      //   window.location.reload();
+      // });
     } catch (error) {
       console.log(error);
       setLoading(false);

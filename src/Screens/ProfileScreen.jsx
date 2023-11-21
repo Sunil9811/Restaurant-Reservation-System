@@ -58,25 +58,27 @@ export function MyBookings() {
   const [error, setError] = useState();
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-        const data = (
-          await axios.post(`${baseUrl}/api/booking/getbookingsbyuserid`, {
-            userid: user._id,
-          })
-        ).data;
-        console.log(data);
-        setBooking(data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-        setError(true);
-      }
-    }
+    
     fetchData();
   }, [user._id]);
+
+  async function fetchData() {
+    try {
+      setLoading(true);
+      const data = (
+        await axios.post(`${baseUrl}/api/booking/getbookingsbyuserid`, {
+          userid: user._id,
+        })
+      ).data;
+      console.log(data);
+      setBooking(data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      setError(true);
+    }
+  }
 
   async function cancelBooking(bookingid, tableid) {
     try {
@@ -87,18 +89,16 @@ export function MyBookings() {
       });
       console.log(result);
       setLoading(false);
-      Swal.fire("Congrats", "Your booking has been cancelled", "success").then(
-        (result) => {
-          window.location.reload();
-        }
+      Swal.fire("Congrats", "Your booking has been cancelled", "success")
+      .then(
+        fetchData()
       );
     } catch (error) {
       console.log(error);
       setLoading(false);
-      Swal.fire("CongOopsrats", "Somthing went wrong", "error").then(
-        (result) => {
-          window.location.reload();
-        }
+      Swal.fire("CongOopsrats", "Somthing went wrong", "error")
+      .then(
+        fetchData()
       );
     }
   }
@@ -130,7 +130,7 @@ export function MyBookings() {
               <p>
                 Status: 
                    <span style={{"marginLeft": "0.3rem"}}>
-                   {book.status === "Cancelled"? <Tag color="#f50"><span className="status">  Cancelled</span></Tag>:<Tag color="#87d068"><span className="status">  Conformed</span></Tag> }
+                   {book.status === "Cancelled"? <Tag color="#f50"><span className="status">  Cancelled</span></Tag>:<Tag color="#87d068"><span className="status">  Confirmed</span></Tag> }
                    </span>
                   
               </p>

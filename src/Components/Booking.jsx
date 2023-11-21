@@ -97,7 +97,7 @@ function Booking() {
             <div className="selection">
               <DatePicker format="DD-MM-YYYY" onChange={filterByDate} />
               <input type="text" value={searchKey}
-              onChange={(e) => setSearchKey(e.target.value)} onKeyUp={filterBysearch} placeholder="search type" />
+              onChange={(e) => setSearchKey(e.target.value)} onKeyUp={filterBysearch} placeholder="Search Type" />
               <select value={type} onChange={(e) => filterByType(e.target.value)}>
                 <option value="all">All</option>
                 <option value="single">Single</option>
