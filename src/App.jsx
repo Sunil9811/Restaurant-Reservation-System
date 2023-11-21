@@ -19,7 +19,7 @@ import AdminScreen from './Screens/AdminScreen';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename='/Restaurant-Reservation-System'>
         <Routes>
           <Route exact path='/' element={<SharedLayout />} />
           <Route index element={<Home />} />
